@@ -24,12 +24,8 @@ function App() {
     setData(dataFromApi.hits);
     setLoading(false);
     console.log(dataFromApi.hits);
-  },
-   useEffect(() => {
-    fetch('http://hn.algolia.com/api/v1/search?query=')
-    .then((success) => success.json())
-    .then((success) => setResult(success.hits))
-  }, [])
+  };
+
 
   const theme = createTheme({
     palette: {
@@ -37,20 +33,19 @@ function App() {
         main: orange[700]
       }
     }});
-  };
+ 
 
 
   return (
-      <>
-        {loading ? <h2 className={classes.h2}></h2> : <NewsList data={data} />}
  <ThemeProvider theme={theme}>
       <SearchBar setResults={setResult}/>
       <SearchResultList results={results}/>
+      {loading ? <h2 className={classes.h2}></h2> : <NewsList data={data} />}
       <Footer />
     </ThemeProvider>
- </>
+
   )
 
-}
+  }
 
 export default App;
