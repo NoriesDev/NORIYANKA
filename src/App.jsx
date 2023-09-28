@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-// import Fetch-Data from "./Fetch-Data"
-// import './App.css';
-// import NewsList from "./NewsList";
 import NewsList from "./NewsList";
+import classes from "./App.module.css";
 
 function App() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     apiUrl();
@@ -15,27 +14,14 @@ function App() {
     const url = await fetch("http://hn.algolia.com/api/v1/search?query=");
     const dataFromApi = await url.json();
     setData(dataFromApi.hits);
+    setLoading(false);
     console.log(dataFromApi.hits);
   };
 
   return (
     <>
       <div>
-        <ol>
-          {/* {data.map((data) => {
-            return (
-              <li key={data.id}>
-                {" "}
-                <a href={data.url} target="_blank" rel="noopener noreferrer">
-                  {data.title}
-                </a>
-                {" by "}
-                {data.author}
-              </li>
-            );
-          })} */}
-          <NewsList data={data} />
-        </ol>
+        {loading ? <h2 className={classes.h2}></h2> : <NewsList data={data} />}
       </div>
     </>
   );
