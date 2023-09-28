@@ -1,20 +1,18 @@
-import { useState } from "react";
-
-function Fetch-Data({ data }) {
+/* eslint-disable react/prop-types */
+// import { useState } from "react";
+function NewsList({ data }) {
   return (
-    <ul>
+    <ol>
       {data.map((item) => (
         <li key={item.objectID}>
           <a href={item.url} target="_blank" rel="noopener noreferrer">
             {item.title}
           </a>
-          {' by '}
+          {" by "}
           {item.author}
         </li>
       ))}
-    </ul>
+    </ol>
   );
 }
-
-export default Fetch-Data;
-
+export default NewsList;
