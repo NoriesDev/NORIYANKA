@@ -1,0 +1,17 @@
+li {
+  font-size: large;
+}
+
+p a {
+  text-decoration: none;
+  color: rgb(97, 97, 97);
+  margin: 0;
+  padding: 0;
+}
+
+h4 a {
+  color: black;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
