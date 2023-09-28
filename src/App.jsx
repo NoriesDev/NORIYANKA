@@ -1,5 +1,4 @@
 
-import { useState, useEffect } from "react";
 import NewsList from "./NewsList";
 import classes from "./App.module.css";
 import SearchBar from "./Search-Bar";
@@ -25,7 +24,8 @@ function App() {
     setData(dataFromApi.hits);
     setLoading(false);
     console.log(dataFromApi.hits);
-      useEffect(() => {
+  },
+   useEffect(() => {
     fetch('http://hn.algolia.com/api/v1/search?query=')
     .then((success) => success.json())
     .then((success) => setResult(success.hits))
@@ -46,7 +46,6 @@ function App() {
  <ThemeProvider theme={theme}>
       <SearchBar setResults={setResult}/>
       <SearchResultList results={results}/>
-      </div>
       <Footer />
     </ThemeProvider>
  </>
