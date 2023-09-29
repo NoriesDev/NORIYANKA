@@ -22,7 +22,6 @@ function App() {
     const dataFromApi = await url.json();
     setData(dataFromApi.hits);
     setLoading(false);
-    console.log(dataFromApi.hits);
   };
 
   const theme = createTheme({
@@ -34,12 +33,18 @@ function App() {
   });
 
   return (
-    <ThemeProvider theme={theme}>
-      <SearchBar setResults={setResult} />
-      <SearchResultList results={results} />
-      {loading ? <h2 className={classes.h2}></h2> : <NewsList data={data} />}
-      {loading ? <h2 className={classes.h2}></h2> : <Footer />}
-    </ThemeProvider>
+    <>
+      {loading ? (
+        <h2 className={classes.h2}></h2>
+      ) : (
+        <ThemeProvider theme={theme}>
+          <SearchBar setResults={setResult} />
+          <SearchResultList results={results} />
+          <NewsList data={data} />
+          <Footer />
+        </ThemeProvider>
+      )}
+    </>
   );
 }
 
