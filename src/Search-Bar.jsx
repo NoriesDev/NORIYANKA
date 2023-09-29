@@ -75,10 +75,10 @@ const fetchData = () => {
 const handleSubmit = (event) => {
   event.preventDefault()
   fetchData()
-}
+};
 
-  return (
-    <Box sx={{ flexGrow: 1 }}>
+return (
+    <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static">
         <Toolbar>
           <Typography
