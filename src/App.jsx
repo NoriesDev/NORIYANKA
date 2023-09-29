@@ -26,7 +26,7 @@ function App() {
     setLoading(false);
     console.log(dataFromApi.hits);
   } catch (error) {
-    console.error(error);
+    console.error('The Data could not be fetched..', error);
     setLoading(false);
   }
   }; 
