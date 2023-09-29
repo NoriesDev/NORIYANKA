@@ -11,12 +11,10 @@
     flex-direction: column;
     background-color: #f57c01 ;
     border: 10px;
-    position: absolute;
     margin-left: 50%;
     margin-top: 0;
     max-height: 200px;
     overflow-y: scroll;
-    z-index: 1;
 }
 
 .each-result {
