@@ -6,11 +6,10 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import "./index.css";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import PropTypes from "prop-types";
 import NewsList from "./NewsList";
 
-const url = "https://hn.algolia.com/api/v1/search?query=";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -54,17 +53,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
 export default function SearchBar() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
+  useEffect(() => { 
+    fetch("https://hn.algolia.com/api/v1/search?query=")
+  }, [])
+  
   const fetchData = () => {
-    fetch(url +  '?query=' +input)
+    fetch("https://hn.algolia.com/api/v1/search?query=" +  '?query=' +input)
       .then((response) => response.json())
       .then((json) => {
-        //   /* if (json.hits && Array.isArray(json.hits)) {
-        //         const result = json.hits.filter((hit) => {
-        //           return value && hit && hit.title && hit.title.toLowerCase().includes(value);
-        //         });*/
         console.log(json);
         setResults(json.hits);
       })
