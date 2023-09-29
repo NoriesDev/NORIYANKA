@@ -63,10 +63,6 @@ const fetchData = () => {
   fetch(url + input)
     .then((response) => response.json())
     .then((json) => {
-     /* if (json.hits && Array.isArray(json.hits)) {
-        const result = json.hits.filter((hit) => {
-          return value && hit && hit.title && hit.title.toLowerCase().includes(value);
-        });*/
         console.log(json);
         setResults(json.hits);
       

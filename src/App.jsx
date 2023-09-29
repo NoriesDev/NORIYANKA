@@ -9,6 +9,7 @@ import {useState, useEffect} from 'react';
 import SearchResultList from "./SearchResultList";
 import "./index.css";
 
+
 function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,7 +40,7 @@ function App() {
   return (
  <ThemeProvider theme={theme}>
       <SearchBar setResults={setResult}/>
-      <SearchResultList results={results}/>
+      <SearchResultList className='each-result' results={results}/>
       {loading ? <h2 className={classes.h2}></h2> : <NewsList data={data} />}
       <Footer />
     </ThemeProvider>
