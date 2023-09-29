@@ -9,6 +9,7 @@ import "./index.css";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import NewsList from "./NewsList";
+import SearchResultList from "./SearchResultList";
 
 const url = "https://hn.algolia.com/api/v1/search";
 
@@ -112,6 +113,7 @@ return (
           </form>
         </Toolbar>
       </AppBar>
+      <SearchResultList className='each-result' results={results}/>
       <NewsList data={results} />
     </Box>
   );
