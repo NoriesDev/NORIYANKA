@@ -2,7 +2,7 @@
 import classes from "./NewsList.module.css";
 function NewsList({ data }) {
   return (
-    <ol>
+    <ol className={classes.backgroundColor}>
       {data.map((item) => (
         <li key={item.objectID} className={classes.li}>
           <h4 className={classes.h4}>
