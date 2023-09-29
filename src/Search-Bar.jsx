@@ -58,7 +58,7 @@ export default function SearchBar() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const fetchData = () => {
-    fetch(url +  '?query=' + input)
+    fetch(url + '?query=' + input)
       .then((response) => response.json())
       .then((json) => {
         //   /* if (json.hits && Array.isArray(json.hits)) {
