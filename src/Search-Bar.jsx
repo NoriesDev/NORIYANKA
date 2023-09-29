@@ -118,5 +118,5 @@ return (
 }
 
 SearchBar.propTypes = {
-  setResults: PropTypes.array.isRequired,
+  setResults: PropTypes.func.isRequired,
 };
