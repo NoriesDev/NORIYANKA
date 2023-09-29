@@ -73,14 +73,15 @@ export default function SearchBar() {
       });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetchData();
-  };
-  /
 
-  return (
-    <Box sx={{ flexGrow: 1 }}>
+const handleSubmit = (event) => {
+  event.preventDefault()
+  fetchData()
+};
+
+
+return (
+    <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static">
         <Toolbar>
           <Typography
