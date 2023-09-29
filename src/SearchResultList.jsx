@@ -6,7 +6,7 @@ export default function SearchResultList({ results }) {
     <div className="results-list">
       {results.map((result, id) => {
         console.log({ result });
-        return <a key={id}>{result.title}</a>;
+        return <a className="each-result" key={id}>{result.title}</a>;
       })}
     </div>
   );
