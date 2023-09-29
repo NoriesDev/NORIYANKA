@@ -20,7 +20,7 @@ function App() {
 
   const apiUrl = async () => {
     try{
-    const url = await fetch("http://hn.algolia.com/api/v1/search?query=");
+    const url = await fetch("http://hn.algolia.com/api/v1/search");
     const dataFromApi = await url.json();
     setData(dataFromApi.hits);
     setLoading(false);
