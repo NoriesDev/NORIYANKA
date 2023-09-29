@@ -20,12 +20,26 @@ function App() {
   }, []);
 
   const apiUrl = async () => {
+    try{
     const url = await fetch("http://hn.algolia.com/api/v1/search?query=");
     const dataFromApi = await url.json();
     setData(dataFromApi.hits);
     setLoading(false);
     console.log(dataFromApi.hits);
-  };
+  } catch (error) {
+    console.error(error);
+    setLoading(false);
+  }
+  }; 
+
+/*
+  const apiUrl = async () => {
+    const url = await fetch("http://hn.algolia.com/api/v1/search?query=");
+    const dataFromApi = await url.json();
+    setData(dataFromApi.hits);
+    setLoading(false);
+    console.log(dataFromApi.hits);
+  }; */
 
 
   const theme = createTheme({
@@ -41,7 +55,7 @@ function App() {
  <ThemeProvider theme={theme}>
       <SearchBar setResults={setResult}/>
       <SearchResultList className='each-result' results={results}/>
-      {loading ? <h2 className={classes.h2}></h2> : <NewsList data={data} />}
+       {loading ? <h2 className={classes.h2}></h2> : <NewsList data={data} />} 
       <Footer />
     </ThemeProvider>
 
