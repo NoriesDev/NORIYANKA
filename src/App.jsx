@@ -40,20 +40,18 @@ function App() {
   });
 
   return (
-    <>
+ <ThemeProvider theme={theme}>
+      <SearchBar setResults={setResult}/>
+      <SearchResultList className='each-result' results={results}/>
       {loading ? (
-        <h2 className={classes.h2}></h2>
-      ) : (
-        <ThemeProvider theme={theme}>
-          <SearchBar setResults={setResult} />
-          <SearchResultList results={results} />
-          <NewsList data={data} />
-          <Footer />
-        </ThemeProvider>
+      <h2 className={classes.h2}></h2>) : (<NewsList data={data} />
       )}
-    </>
-  );
-}
+      <Footer />
+    </ThemeProvider>
+
+  )
+
+  }
 
 
 
