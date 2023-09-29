@@ -57,7 +57,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchBar() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
-
   const fetchData = () => {
     fetch(url + input)
       .then((response) => response.json())
@@ -78,16 +77,7 @@ export default function SearchBar() {
     event.preventDefault();
     fetchData();
   };
-  //
-  //   const handleInputChange = (event) => {
-  //     setInput(event.target.value);
-  //   };
-  //
-  //   const handleKeyPress = (event) => {
-  //     if (event.key === "Enter") {
-  //       setResults(input);
-  //     }
-  //   };
+  /
 
   return (
     <Box sx={{ flexGrow: 1 }}>

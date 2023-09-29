@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import SearchResultList from "./SearchResultList";
 import "./index.css";
 
+
 function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -47,5 +48,8 @@ function App() {
     </>
   );
 }
+
+
+
 
 export default App;
